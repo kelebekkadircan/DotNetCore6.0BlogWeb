@@ -4,6 +4,7 @@ using Blog.DataLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog.DataLayer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250212184352_mig02")]
+    partial class mig02
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,44 +77,6 @@ namespace Blog.DataLayer.Migrations
                     b.HasIndex("ImageId");
 
                     b.ToTable("Articles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("48483b7e-aafa-4bc1-8bf6-9523d577a756"),
-                            CategoryId = new Guid("2a2a8ef5-0d02-4091-b462-6bea352720e1"),
-                            Content = "ASP.NET CORE DENEME 1 İÇERİK ",
-                            CreatedBy = "Kadircan 1",
-                            CreatedDate = new DateTime(2025, 2, 12, 22, 21, 18, 240, DateTimeKind.Local).AddTicks(7085),
-                            ImageId = new Guid("69726f77-c099-4048-81f0-f33e437175cf"),
-                            Title = "ASP.NET CORE DENEME 1",
-                            ViewCount = 100,
-                            isDeleted = false
-                        },
-                        new
-                        {
-                            Id = new Guid("47376917-e0a9-4329-84c6-c924681dc246"),
-                            CategoryId = new Guid("af45c78d-8dd3-4b5f-909b-1af12d09c7cb"),
-                            Content = "ASP.NET CORE DENEME 2 İÇERİK ",
-                            CreatedBy = "Kadircan 2",
-                            CreatedDate = new DateTime(2025, 2, 12, 22, 21, 18, 240, DateTimeKind.Local).AddTicks(7091),
-                            ImageId = new Guid("91ce1900-9c49-4e5e-a44e-070c082f95e2"),
-                            Title = "ASP.NET CORE DENEME 2",
-                            ViewCount = 100,
-                            isDeleted = false
-                        },
-                        new
-                        {
-                            Id = new Guid("5a02788c-d74b-4ff6-a762-8967fe4237d5"),
-                            CategoryId = new Guid("3d832871-248c-4da9-ba3d-64732cd26bcc"),
-                            Content = "ASP.NET CORE DENEME 3 İÇERİK ",
-                            CreatedBy = "Kadircan 3",
-                            CreatedDate = new DateTime(2025, 2, 12, 22, 21, 18, 240, DateTimeKind.Local).AddTicks(7105),
-                            ImageId = new Guid("ca14c683-3529-45b4-8268-dd08be4e9344"),
-                            Title = "ASP.NET CORE DENEME 3",
-                            ViewCount = 100,
-                            isDeleted = false
-                        });
                 });
 
             modelBuilder.Entity("Blog.EntityLayer.Entities.Category", b =>
@@ -150,32 +114,6 @@ namespace Blog.DataLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("2a2a8ef5-0d02-4091-b462-6bea352720e1"),
-                            CreatedBy = "Kadircan 1",
-                            CreatedDate = new DateTime(2025, 2, 12, 22, 21, 18, 240, DateTimeKind.Local).AddTicks(7343),
-                            Name = "ASP.NET CORE CATEGORY 1",
-                            isDeleted = false
-                        },
-                        new
-                        {
-                            Id = new Guid("af45c78d-8dd3-4b5f-909b-1af12d09c7cb"),
-                            CreatedBy = "Kadircan 2",
-                            CreatedDate = new DateTime(2025, 2, 12, 22, 21, 18, 240, DateTimeKind.Local).AddTicks(7347),
-                            Name = "ASP.NET CORE CATEGORY 2",
-                            isDeleted = false
-                        },
-                        new
-                        {
-                            Id = new Guid("3d832871-248c-4da9-ba3d-64732cd26bcc"),
-                            CreatedBy = "Kadircan 3",
-                            CreatedDate = new DateTime(2025, 2, 12, 22, 21, 18, 240, DateTimeKind.Local).AddTicks(7351),
-                            Name = "ASP.NET CORE CATEGORY 3",
-                            isDeleted = false
-                        });
                 });
 
             modelBuilder.Entity("Blog.EntityLayer.Entities.Image", b =>
@@ -217,35 +155,6 @@ namespace Blog.DataLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Images");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("69726f77-c099-4048-81f0-f33e437175cf"),
-                            CreatedBy = "Kadircan 1",
-                            CreatedDate = new DateTime(2025, 2, 12, 22, 21, 18, 240, DateTimeKind.Local).AddTicks(7451),
-                            FileName = "Image Name 1 ",
-                            FileType = "jpg",
-                            isDeleted = false
-                        },
-                        new
-                        {
-                            Id = new Guid("91ce1900-9c49-4e5e-a44e-070c082f95e2"),
-                            CreatedBy = "Kadircan 2",
-                            CreatedDate = new DateTime(2025, 2, 12, 22, 21, 18, 240, DateTimeKind.Local).AddTicks(7456),
-                            FileName = "Image Name 2 ",
-                            FileType = "jpg",
-                            isDeleted = false
-                        },
-                        new
-                        {
-                            Id = new Guid("ca14c683-3529-45b4-8268-dd08be4e9344"),
-                            CreatedBy = "Kadircan 3",
-                            CreatedDate = new DateTime(2025, 2, 12, 22, 21, 18, 240, DateTimeKind.Local).AddTicks(7459),
-                            FileName = "Image Name 3 ",
-                            FileType = "jpg",
-                            isDeleted = false
-                        });
                 });
 
             modelBuilder.Entity("Blog.EntityLayer.Entities.Article", b =>
