@@ -1,8 +1,26 @@
-﻿@{
+﻿@model List<ArticleDto>
+
+@{
     ViewData["Title"] = "Home Page";
 }
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div class="row">
+    @foreach (var article in Model)
+    {
+        <div class="col-md-4">
+            <h2>@article.Title</h2>
+            <p>@article.Content</p>
+            <h2>@article.CreatedBy</h2>
+        </div>
+    }
 </div>

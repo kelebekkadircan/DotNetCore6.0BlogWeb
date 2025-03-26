@@ -1,10 +1,11 @@
 ﻿using System.Reflection;
 using Blog.EntityLayer.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Blog.DataLayer.Context
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser,AppRole,Guid,AppUserClaim,AppUserRole,AppUserLogin,AppRoleClaim,AppUserToken>
     {
         public AppDbContext()
         {
@@ -27,6 +28,8 @@ namespace Blog.DataLayer.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // user identity yapısı için tablo adlarını değiştirmek için
+            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }

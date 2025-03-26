@@ -14,5 +14,7 @@ namespace Blog.EntityLayer.Entities
         public string FileType { get; set; }
         
         public ICollection<Article> Articles { get; set; }
+
+        public ICollection<AppUser> AppUsers { get; set; }
     }
 }

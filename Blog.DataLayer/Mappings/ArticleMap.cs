@@ -26,6 +26,7 @@ namespace Blog.DataLayer.Mappings
                 UpdatedDate = null,
                 DeletedDate = null,
                 isDeleted = false,
+                UserId = Guid.Parse("F9F4FC85-C51B-4EDF-8A88-8D9A51B05CD8"),
             },new Article
             {
                 Id = Guid.NewGuid(),
@@ -41,6 +42,7 @@ namespace Blog.DataLayer.Mappings
                 UpdatedDate = null,
                 DeletedDate = null,
                 isDeleted = false,
+                UserId = Guid.Parse("c996d162-2278-4ffd-b8cd-abc1974efdca")
 
             }, new Article
             {
@@ -57,6 +59,8 @@ namespace Blog.DataLayer.Mappings
                 UpdatedDate = null,
                 DeletedDate = null,
                 isDeleted = false,
+                UserId = Guid.Parse("c996d162-2278-4ffd-b8cd-abc1974efdca")
+
 
             });
 

@@ -1,0 +1,21 @@
+﻿@using Blog.EntityLayer.DTO.Articles
+
+
+
+
+@model List<ArticleDto>
+
+    <h1>
+        ADMIN AREA PAGE..
+    </h1>
+
+    @foreach(var item in Model)
+    {
+        <h1>@item.Title</h1>
+        <br />
+        <p>@item.Content</p>
+        <br />
+        <p>@item.CreatedBy</p>
+        <br />
+    }
+
